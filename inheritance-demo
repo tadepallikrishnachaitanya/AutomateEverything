@@ -1,0 +1,39 @@
+# import packages
+from abc import ABC, abstractmethod
+
+# parent class
+
+class Bank(ABC):
+    @abstractmethod
+    def deposit(self):
+        pass
+    @abstractmethod
+    def openSalartAcc(self):
+        pass
+    @abstractmethod
+    def withdraw(self):
+        return "check1"
+    @abstractmethod
+    def checkbal(self):
+        pass
+
+
+# child class - withdraw and check balance, open fd
+class SBI(Bank):
+    def openFD(self):
+        return "FD"
+    def deposit(self):
+        return "hello"
+    def openSalartAcc(self):
+        return "check"
+    def withdraw(self):
+        return super().withdraw()
+    def checkbal(self):
+        return super().checkbal()
+    
+user=SBI()
+print(user.openFD())
+print(user.deposit())
+print(user.openSalartAcc())
+print(user.withdraw())
+print(user.checkbal())
