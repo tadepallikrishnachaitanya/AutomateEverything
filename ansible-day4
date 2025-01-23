@@ -1,0 +1,10 @@
+commands to check ansible apache status:
+
+- hosts: web
+  become: true
+  tasks:
+    - name: Install apache on web instance
+      become: true
+      apt: name=apache2 update_cache=yes state=latest
+
+command: sudo systemctl status apache2
